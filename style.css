@@ -1,0 +1,102 @@
+html
+{
+    width:100%;
+    height:100%;
+    background-color:mediumseagreen;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    overflow: hidden;
+
+}
+
+.game
+{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.controls
+{
+
+    display:flex;
+    gap:20px;
+    margin-bottom: 20px;
+}
+
+.button
+{
+    background-color: lavender;
+    color:black;
+    border-radius: 10px;
+    padding:10px 20px;
+    border:0;
+    cursor:pointer;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.start
+{
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+    
+}
+
+.broad-container
+{
+    position:relative;
+}
+
+.broad,.win
+{
+    border-radius: 5px;
+    box-shadow: 0 25px 50px rgb(33 33 33/25%);
+    background-color:darksalmon;
+
+}
+
+.broad
+{
+    padding:20px;
+    display: grid;
+    grid-template-columns:repeat(4,auto);
+    grid-gap: 20px;
+}
+
+.broad-container.flippedd .broad{
+    transform: rotatey(180deg) rotateZ(50deg);
+}
+
+.broad-container.flipped.win{
+    transform: rotatey(0) rotatez(0);
+}
+
+.card
+{
+    position:relative;
+    width:100px;
+    height:100px;
+    cursor:pointer;
+}
+.card-front,.card-back
+{
+    position:absolute;
+    border-radius:5px;
+    height:100%;
+    width:100%;
+    background-color: black;
+    transition: transform .6s cubic-bezier(0.4,0.0,0.2,1);
+    backface-visibility: hidden;
+}
+.card-back
+{
+    transform: rotatey(180deg) rotatez(50deg);
+    user-select: none;
+    font-size: 28pt;
+    text-align: center;
+    line-height: 100px;
+    background-color: white;
+}
