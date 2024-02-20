@@ -100,3 +100,31 @@ html
     line-height: 100px;
     background-color: white;
 }
+.card.flippedd .card-front
+{
+  transform: rotateY(180deg) rotateZ(50deg);
+}
+.card.flippedd .card-back
+
+{
+ transform: rotateY(0) rotateZ(0);
+
+}
+
+.win
+{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width:100%;
+    text-align: center;
+    background-color: whitesmoke;
+    transform: rotateY(180deg) rotatez(50deg);
+    
+}
+
+.highlight
+{
+    color:purple;
+}
