@@ -42,3 +42,17 @@ const pickRandom=(array,items) => {
      }
      return randomPicks;
 }
+const generateGame =() =>{
+    const dimension=selectors.board.getAttribute('data-dimension');
+
+    if(dimension % 2 !==0){
+        throw new Error("The dimension of the  board must be an even number")
+    }
+    const emojies =['❤','💛','💚','💙','🖤','🤍','🤎','💜','❣','💗']
+    const picks=pickRandom(emojies,(dimension*dimension)/2);
+    const items=shuffle([...picks,...picks]);
+    const cards =
+    <div class ="board" style="grid-template-columns:repeat(${dimension},auto)">
+        
+    </div>
+}
