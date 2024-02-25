@@ -53,6 +53,31 @@ const generateGame =() =>{
     const items=shuffle([...picks,...picks]);
     const cards =
     <div class ="board" style="grid-template-columns:repeat(${dimension},auto)">
-        
-    </div>
+            ${items.map(item=>'
+               <div class="card">
+                 <div class="card-front"></div>
+                 <div class="card-back">${item}</div>
+                </div>   
+            ').join('')}
+        </div>
+    '
+
+    const parser=new DOMParser().parseFromString(cards,'text/html');
+    selectors.board.replaceWith(parser.querySelector('.board'))
+};
+
+const startGme=() => {
+    state.gameStarted =true;
+    selectors.start.classList.add('disabled');
+
+    state.loop=setInterval(()=>{
+        state.totalTime++;
+
+        selectors.moves.innerText = '${state.totalFlips} moves';
+
+    })
 }
+
+
+        
+    
